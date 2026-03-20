@@ -29,3 +29,11 @@ Open an [issue on Codeberg](https://codeberg.org/Articles-lpmwfx/rust-slint-ai/i
 ## Author
 
 lpmwfx, Denmark, EU
+
+---
+
+<!-- LARS:START -->
+<a href="https://lpmathiasen.com">
+  <img src="https://carousel.lpmathiasen.com/carousel.svg?slot=2" alt="Lars P. Mathiasen"/>
+</a>
+<!-- LARS:END -->

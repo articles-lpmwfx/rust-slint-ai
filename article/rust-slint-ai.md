@@ -4,7 +4,6 @@ author: "lpmwfx, Denmark, EU"
 date: "20.03.2026"
 lang: en
 ---
-
 # Rust + Slint: The Underrated Stack for AI-Era Application Development
 
 > As AI tools reshape how we build software, the combination of Rust and Slint is emerging as a surprisingly powerful pairing — not because of the language itself, but because of what it demands from the developer: system design thinking, declarative clarity, and a workflow that turns ideas into working MVPs in days, not months.
@@ -13,7 +12,7 @@ The mainstream AI-assisted development conversation has largely been framed arou
 
 ## Language is no longer the bottleneck
 
-Here is the insight that changes everything about how we evaluate technology stacks in the AI era: the programming language itself is no longer the primary driver of developer productivity. AI tooling has largely commoditised syntax. What separates fast, high-quality development from slow, fragile development is something deeper — **system design thinking**.
+Here is the insight that changes everything about how we evaluate technology stacks in the AI era: the programming language itself is no longer the primary driver of developer productivity. AI tooling has largely commoditized syntax. What separates fast, high-quality development from slow, fragile development is something deeper — **system design thinking**.
 
 The real work of modern AI-assisted development happens in the dialogue between human and machine: the developer defines intent, constraints, and architecture; the AI generates, refines, and validates implementation. In this model, the human's contribution is design clarity. The AI's contribution is code. The quality of that collaboration depends almost entirely on how precisely the developer can express what the system should do — and how reliably the toolchain can validate whether it does.
 

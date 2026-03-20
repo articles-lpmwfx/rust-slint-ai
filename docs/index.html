@@ -1,17 +1,307 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Rust Slint Ai — Coming Soon</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="lpmwfx, Denmark, EU" />
+  <title>rust-slint-ai</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <main>
-        <h1>Rust Slint Ai</h1>
-        <p style="color: var(--muted); font-size: 1.2rem;">Coming soon</p>
-        <p>lpmwfx, Denmark, EU</p>
-    </main>
+<div class="theme-toggle" aria-label="Theme switcher">
+  <button onclick="setTheme('light')" title="Light">&#9788;</button>
+  <button onclick="setTheme('dark')" title="Dark">&#9790;</button>
+  <button onclick="setTheme('system')" title="System">&#9881;</button>
+</div>
+<nav class="article-nav">
+  <a href="https://lpmwfx.com" class="nav-home">&#127968; .com</a>
+  <a href="https://lpmwfx.eu" class="nav-home">&#127968; .eu</a>
+  <a href="https://github.com/articles-lpmwfx/rust-slint-ai/releases/latest">&#128196; PDF</a>
+  <a href="https://github.com/articles-lpmwfx/rust-slint-ai/blob/main/article/rust-slint-ai.md">&#128221; Markdown</a>
+  <a href="SHA256SUMS">&#128274; SHA256</a>
+  <a href="https://github.com/articles-lpmwfx/rust-slint-ai">GitHub</a>
+  <a href="https://codeberg.org/Articles-lpmwfx/rust-slint-ai">Codeberg</a>
+  <a href="https://codeberg.org/Articles-lpmwfx/rust-slint-ai/issues">&#128172; Feedback</a>
+</nav>
+<header id="title-block-header">
+<h1 class="title">rust-slint-ai</h1>
+<p class="author">lpmwfx, Denmark, EU</p>
+<p class="date">20.03.2026</p>
+</header>
+<h1
+id="rust-slint-the-underrated-stack-for-ai-era-application-development">Rust
++ Slint: The Underrated Stack for AI-Era Application Development</h1>
+<blockquote>
+<p>As AI tools reshape how we build software, the combination of Rust
+and Slint is emerging as a surprisingly powerful pairing — not because
+of the language itself, but because of what it demands from the
+developer: system design thinking, declarative clarity, and a workflow
+that turns ideas into working MVPs in days, not months.</p>
+</blockquote>
+<p>The mainstream AI-assisted development conversation has largely been
+framed around JavaScript, Python, and the usual suspects. TypeScript
+frontends, Python backends, and whatever framework went viral last
+Tuesday. But a quieter revolution is happening among developers who have
+made a different bet — on Rust and Slint — and the results are
+compelling enough that the rest of the industry should take notice.</p>
+<h2 id="language-is-no-longer-the-bottleneck">Language is no longer the
+bottleneck</h2>
+<p>Here is the insight that changes everything about how we evaluate
+technology stacks in the AI era: the programming language itself is no
+longer the primary driver of developer productivity. AI tooling has
+largely commoditized syntax. What separates fast, high-quality
+development from slow, fragile development is something deeper —
+<strong>system design thinking</strong>.</p>
+<p>The real work of modern AI-assisted development happens in the
+dialogue between human and machine: the developer defines intent,
+constraints, and architecture; the AI generates, refines, and validates
+implementation. In this model, the human’s contribution is design
+clarity. The AI’s contribution is code. The quality of that
+collaboration depends almost entirely on how precisely the developer can
+express what the system should do — and how reliably the toolchain can
+validate whether it does.</p>
+<p>This reframes the question entirely. It is not “which language am I
+most fluent in?” but “which language and framework create the most
+productive surface for human-AI collaboration?”</p>
+<p>Rust and Slint answer that question exceptionally well.</p>
+<h2 id="why-rust-and-slint-fit-the-ai-collaboration-model">Why Rust and
+Slint fit the AI collaboration model</h2>
+<p>The properties that make Rust and Slint excellent AI collaboration
+targets are the same properties that make them excellent engineering
+choices in general — but they matter more, not less, in an AI-assisted
+workflow.</p>
+<p><strong>Declarative by nature.</strong> Slint’s <code>.slint</code>
+UI language and Rust’s type system both push the developer toward
+expressing <em>what</em> rather than <em>how</em>. Declarative code is
+easier to reason about, easier for AI to generate correctly, and easier
+for a developer to review and validate. When a human describes a UI
+component or a data transformation, the AI can produce declarative
+markup or typed Rust that closely mirrors the description. There is less
+ambiguity to resolve, fewer implicit conventions to get wrong.</p>
+<p><strong>Few exceptions, strong guarantees.</strong> One of the hidden
+costs of AI-generated code in dynamic languages is that edge cases and
+exceptions are invisible until runtime. Rust’s ownership model and
+exhaustive type system surface these problems at compile time. If the AI
+generates code that mishandles memory, violates a contract, or misses a
+case in a match expression, the compiler catches it before the developer
+does. The feedback loop is tight and trustworthy. This is not a minor
+convenience — it fundamentally changes how much cognitive load the
+developer carries when reviewing AI-generated code.</p>
+<p><strong>Memory management without cognitive overhead.</strong> Rust
+eliminates an entire class of bugs — use-after-free, data races, null
+pointer dereferences — through compile-time enforcement rather than
+runtime checks or garbage collection. In an AI-assisted workflow, where
+large volumes of code are generated quickly, this matters enormously.
+The developer can focus on system design and product logic rather than
+auditing memory handling in every generated function.</p>
+<p><strong>Native multi-core parallelism.</strong> Rust’s ownership and
+borrowing rules make concurrent programming safe by construction.
+Multi-core parallelism — essential for AI inference, data pipelines, and
+responsive UIs — is a first-class citizen, not an afterthought bolted on
+with locks and prayers. An AI-generated async Rust function that
+processes model outputs in parallel is, by definition, free of data
+races. The architecture scales without the developer having to become a
+concurrency expert.</p>
+<blockquote>
+<p>The AI handles the code. The developer handles the design. Rust and
+Slint ensure that the boundary between those two responsibilities is
+clear, enforced, and productive.</p>
+</blockquote>
+<h2 id="portability-as-a-first-class-concern">Portability as a
+first-class concern</h2>
+<p>Modern applications are expected to run on an increasingly diverse
+set of targets. A product might need a native Windows client, an
+embedded touchscreen interface, a web-based demo, and a Linux server
+component — all from the same team and ideally the same codebase.</p>
+<table>
+<colgroup>
+<col style="width: 53%" />
+<col style="width: 46%" />
+</colgroup>
+<thead>
+<tr>
+<th>Target</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Desktop</strong></td>
+<td>Native Windows, macOS, and Linux with full hardware
+acceleration.</td>
+</tr>
+<tr>
+<td><strong>Embedded</strong></td>
+<td>Runs on microcontrollers and bare-metal targets. No OS
+required.</td>
+</tr>
+<tr>
+<td><strong>Web (WASM)</strong></td>
+<td>Compile to WebAssembly and run in any modern browser.</td>
+</tr>
+<tr>
+<td><strong>Mobile</strong></td>
+<td>Emerging support for iOS and Android via Slint’s rendering
+backends.</td>
+</tr>
+</tbody>
+</table>
+<p>Slint’s declarative UI model is central to this portability story.
+The interface is described once in <code>.slint</code>; the rendering
+backend adapts to the target platform. The Rust application logic
+compiles to any supported target with minimal changes. The same codebase
+that powers a desktop tool can be recompiled for an embedded display. No
+runtime surprises, no platform-specific bugs, no JavaScript engine
+overhead.</p>
+<h2 id="mib-mega-iterative-brewing-from-idea-to-mvp">MIB: Mega Iterative
+Brewing from idea to MVP</h2>
+<p>The development pattern that emerges with Rust and Slint is what
+might be called <strong>MIB — Mega Iterative Brewing</strong>. The idea
+is simple: with the right stack, the distance between a raw idea and a
+working, testable MVP shrinks dramatically. Days instead of weeks.</p>
+<p>In a MIB workflow, the developer operates primarily as a systems
+designer. The human defines the architecture, the data model, the UI
+structure, and the integration points. The AI generates the
+implementation. Rust and Slint make this division of labour unusually
+clean:</p>
+<ul>
+<li>The developer sketches the system design and expresses it in typed
+interfaces and declarative UI structure.</li>
+<li>The AI fills in the implementation, guided by the type system and
+the declarative constraints.</li>
+<li>The compiler validates the result automatically, catching the
+majority of integration errors before they reach a running
+application.</li>
+<li>The developer reviews at the level of design, not syntax.</li>
+</ul>
+<p><strong>No runtime dependency hell.</strong> Rust produces
+single-binary executables with no external runtime dependencies.
+Shipping a prototype means sending one file. Getting feedback from
+stakeholders does not require a setup guide.</p>
+<p><strong>Fast, trustworthy feedback.</strong> When Rust compiles, it
+almost always runs correctly. Iteration speed is high not because
+compilation is fast, but because the gap between “compiles” and “works”
+is narrow. Time goes into building, not debugging.</p>
+<h2 id="ai-integration-the-quiet-killer-feature">AI integration: the
+quiet killer feature</h2>
+<p>The integration of AI capabilities into applications — cloud model
+APIs, embedding pipelines, vector search — is increasingly table stakes.
+Rust’s performance characteristics make it an excellent host for this
+kind of work.</p>
+<p>Calling a cloud inference API from the UI? Slint’s callback system
+wires async Rust naturally into UI events. The architecture that emerges
+is clean: the Slint layer handles presentation, Rust’s async runtime
+manages I/O and model calls, and the type system enforces the contracts
+between them.</p>
+<blockquote>
+<p>In practice, AI-assisted development with Rust and Slint creates a
+virtuous cycle: the AI generates code that is easier to verify, the
+compiler validates the AI’s suggestions automatically, and the developer
+spends their attention on product decisions rather than debugging.</p>
+</blockquote>
+<h2 id="the-honest-tradeoffs">The honest tradeoffs</h2>
+<p>No stack is without friction. Rust’s learning curve is real, and it
+remains steeper than Python or TypeScript for developers coming from
+dynamic language backgrounds. The Slint ecosystem, while growing
+quickly, does not yet have the component library breadth of established
+frameworks like React or Flutter.</p>
+<p>But the calculus is shifting. AI coding tools significantly reduce
+the Rust onboarding tax — the borrow checker is far less intimidating
+when an AI can explain why a given ownership pattern is rejected and
+propose a fix in seconds. Slint’s documentation is excellent and its
+component model is learnable in a weekend.</p>
+<p>More importantly, the properties that make Rust and Slint slightly
+harder to learn are exactly the properties that make them excellent AI
+collaboration targets. The strictness that challenges a beginner is the
+same strictness that catches AI-generated errors automatically. The
+upfront investment is modest compared to the compounding returns.</p>
+<h2 id="a-stack-worth-the-bet">A stack worth the bet</h2>
+<p>The developers who have already made the shift to Rust and Slint
+report a consistent pattern: higher productivity, fewer production
+incidents, and dramatically better portability across targets. The
+combination is not just technically sound — it is philosophically
+aligned with where software development is heading.</p>
+<p>As AI handles more of the implementation work, the developer’s role
+shifts toward system design, architecture, and product thinking. Rust
+and Slint reward exactly those skills. They demand clarity of design,
+punish ambiguity, and handle the low-level complexity that used to
+consume engineering time automatically.</p>
+<p>The era of AI-accelerated development may end up being the moment
+this combination finally gets the widespread adoption it deserves — not
+because the language is easy, but because it is precisely the right
+medium for the human-AI collaboration that defines modern software
+development.</p>
+<hr />
+<p><em>Read also: <a href="https://rust-slint-ai.lpmwfx.com">HTML</a> ·
+<a
+href="https://github.com/articles-lpmwfx/rust-slint-ai/releases">PDF</a>
+· <a href="https://rust-slint-ai.lpmwfx.eu">Codeberg</a></em></p>
+<script type="module">
+  
+
+  function isDark() {
+    const theme = document.documentElement.getAttribute('data-theme');
+    if (theme === 'dark') return true;
+    if (theme === 'light') return false;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+  
+
+  window.setTheme = function(theme) {
+    if (theme === 'system') {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.removeItem('theme');
+    } else {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+    }
+    updateToggle();
+    
+  };
+
+  function updateToggle() {
+    const current = localStorage.getItem('theme') || 'system';
+    document.querySelectorAll('.theme-toggle button').forEach((btn, i) => {
+      const themes = ['light', 'dark', 'system'];
+      btn.classList.toggle('active', themes[i] === current);
+    });
+  }
+
+  // Apply saved theme on load
+  const saved = localStorage.getItem('theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
+  updateToggle();
+
+  // Listen for system theme changes
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    if (!localStorage.getItem('theme')) {
+      
+    }
+  });
+
+  
+</script>
 
 <!-- LARS:START -->
 <div class="carousel-badge"><a href="https://lpmathiasen.com"><img src="https://carousel.lpmathiasen.com/carousel.svg?slot=2" alt="Lars P. Mathiasen"/></a></div>
